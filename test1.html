@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        var folder = "images/Events/CricketTourney/";
+
+        $.ajax({
+            url: folder,
+            success: function (data) {
+                $(data).find("a").attr("href", function (i, val) {
+                    if (val.match(/\.(jpe?g|JPG|gif)$/)) {
+                        $("body").append("&ltdiv&gt&ltimg data-lazy='" + val +"' &gt&lt/div&gt<br>");
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id='fileNames'> </div>
+
+</body>
+</html>
